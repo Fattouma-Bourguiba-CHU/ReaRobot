@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        {{ patient_record.first_name }}
+        {{ patient_record.last_name }}<br/>
+    </div>
+    <div class="card-body">
+        <p class="card-text"><strong>ID : </strong>{{ patient_record.id }}</p>
+        <p class="card-text"><strong>CIN Number : </strong>{{ patient_record.num_cin }}</p>
+        <p class="card-text"><strong>Phone Number : </strong>{{ patient_record.phone }}</p>
+        <p class="card-text"><strong>Date Of Birth : </strong>{{ patient_record.birth_date }}</p>
+        <p class="card-text"><strong>Gender : </strong>{{ patient_record.gender }}</p>
+        <p class="card-text"><strong>Address : </strong>{{ patient_record.address }}</p>
+        <p class="card-text"><strong>Care Unity : </strong>{{ patient_record.care_unity }}</p>
+        <p class="card-text"><strong>Entry Date : </strong>{{ patient_record.created_at }}</p>
+        <p class="card-text"><strong>Release Date : </strong>{{ patient_record.release_date }}</p>  
+    </div>
+</div>
+<br>
+<br>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'delete_patient' patient_record.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'update_patient' patient_record.id %}" class="btn btn-secondary">Update Patient</a>
+
+
+
+
+
+
+
+
+{% endblock %}
